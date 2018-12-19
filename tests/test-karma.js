@@ -28,6 +28,7 @@ const assert = require('chai').assert;
 const common = require('./test-common');
 const jsigs = require('..');
 const jsonld = require('../node_modules/jsonld/dist/jsonld.js');
+const {suites} = require('../lib/suites');
 
 //var system = require('system');
 const forge = require('../node_modules/node-forge');
@@ -39,9 +40,10 @@ window.bitcoreMessage = bitcoreMessage;
 jsigs.promises({api: jsigs.promises});
 
 const options = {
-  assert: assert,
-  jsigs: jsigs,
-  jsonld: jsonld,
+  assert,
+  jsigs,
+  jsonld,
+  suites,
   nodejs: false
 };
 
